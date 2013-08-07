@@ -11,7 +11,7 @@
 		<select id="client-filter" data-bind="options: clients, optionsText: 'clientName', value: selectedClient,  event:{ change: addSelectedClient}"></select>
 	</div><!-- filters -->
 	
-	<p class="user-info">Logged in as <strong><a href="@Url.Action("ViewProfile", "User")">@ViewBag.Username</a></strong></p>
+	@{ Html.RenderPartial("LoginControl"); }
 	
 	<div class="filter-bar clearfix">
 		<!-- ko foreach: selectedMembers -->

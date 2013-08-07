@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using GA.Core.Security;
 using Microsoft.IdentityModel.Claims;
+using Microsoft.IdentityModel.Web;
 using sdtime.Util.Security;
 
 namespace sdtime.Controllers
@@ -31,6 +33,22 @@ namespace sdtime.Controllers
             }
             return View();
             
+        }
+
+        public ActionResult Logout()
+        {
+            WSFederationAuthenticationModule fam = FederatedAuthentication.WSFederationAuthenticationModule;
+
+            try
+            {
+                FormsAuthentication.SignOut();
+            }
+            finally
+            {
+                fam.SignOut(true);
+            }
+
+            return RedirectToAction("Index", "Home");
         }
 
     }

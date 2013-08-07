@@ -3,11 +3,39 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>View Profile</h2>
+<header class="clearfix">
+	<h1><a href='@Url.Action("Index", "Home")'><img src='@Url.Content("~/Content/logo.png")' width="107" height="40" alt="SD Time" /></a></h1>
+	
+	<div class="filters clearfix">
+		<select id="employee-filter" data-bind="options: members, optionsText: 'fullName', value: selectedMember, event: { change: addSelectedEmployee }"></select>
+		<select id="client-filter" data-bind="options: clients, optionsText: 'clientName', value: selectedClient, event: { change: addSelectedClient }"></select>
+	</div><!-- filters -->
+	
+	@{ Html.RenderPartial("LoginControl"); }
+	
+	<div class="filter-bar clearfix">
+		<!-- ko foreach: selectedMembers -->
+			<a class="filter-item" data-bind="text: fullName, event: { click: removeSelectedEmployee }" title="Remove this filter"></a>
+		<!-- /ko -->
+		<!-- ko foreach: selectedClients -->
+			<a class="filter-item" data-bind="text: clientName, event: { click: removeSelectedClient }" title="Remove this filter"></a>			
+		<!-- /ko -->
+	</div><!-- filter-bar -->
+	
+	<div class="errordiv"></div>
 
-<div>Name: @ViewBag.Username</div>
+</header>
 
-<div>Identity Provider: @ViewBag.ProviderName   </div>
+<div style="position: relative;margin-top: 80px;margin-left: 60px;">
+    <h2>View Profile</h2>
 
-<div>Member Since: @ViewBag.MemberSince</div>
+    <div>Name: @ViewBag.Username</div>
+
+    <div>Identity Provider: @ViewBag.ProviderName   </div>
+
+    <div>Member Since: @ViewBag.MemberSince</div>
+
+    <h3>@Html.ActionLink("Logout", "Logout", "User")</h3>
+
+</div>
 

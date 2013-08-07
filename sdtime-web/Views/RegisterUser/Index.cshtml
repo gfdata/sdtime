@@ -47,7 +47,7 @@
 		<select id="client-filter" data-bind="options: clients, optionsText: 'clientName', value: selectedClient, event: { change: addSelectedClient }"></select>
 	</div><!-- filters -->
 	
-	<p class="user-info">Logged in as <strong><a href="@Url.Action("ViewProfile", "User")">@ViewBag.Username</a></strong></p>
+	@{ Html.RenderPartial("LoginControl"); }
 	
 	<div class="filter-bar clearfix">
 		<!-- ko foreach: selectedMembers -->
@@ -63,55 +63,57 @@
 </header>
 
 
+<div style="position: relative; margin-left: 24px; margin-top: 68px;">
 
-<h2 class="IntroTitle">Please register (one time only)... </h2>
+    <h2 class="IntroTitle">Please register (one time only)... </h2>
 
-<div class="display-field errormessage">
-    @ViewBag.ErrorMessage
-</div>
-
-<fieldset>
-    <legend>Login Info</legend>
-
-    <div class="display-label">Provider Name</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.IdentityProviderName)
+    <div class="display-field errormessage">
+        @ViewBag.ErrorMessage
     </div>
-    <div class="display-field" style="display:none;">
-        @Html.DisplayFor(model => model.ProviderKey)
-    </div>
+
+    <fieldset>
+        <legend>Login Info</legend>
+
+        <div class="display-label">Provider Name</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.IdentityProviderName)
+        </div>
+        <div class="display-field" style="display:none;">
+            @Html.DisplayFor(model => model.ProviderKey)
+        </div>
     
-    @using(Html.BeginForm("Submit", "RegisterUser", FormMethod.Post)) {
-    <div class="display-label">Email Address: </div>
-    <div class="display-field">
-        @Html.EditorFor(model => model.EmailAddress)
-    </div>
+        @using(Html.BeginForm("Submit", "RegisterUser", FormMethod.Post)) {
+        <div class="display-label">Email Address: </div>
+        <div class="display-field">
+            @Html.EditorFor(model => model.EmailAddress)
+        </div>
         
-    <div>
-        <span><h3>Please link your identity to your Connectwise account.  Connect with your username or email address below.</h3></span>
-    </div>
+        <div>
+            <span><h3>Please link your identity to your Connectwise account.  Connect with your username or email address below.</h3></span>
+        </div>
 
-    <div class="display-label">Connectwise Search Fields: </div>
-    <div class="display-label">Username: </div>
-    <div class="display-field">
-        @Html.EditorFor(model => model.ConnectwiseID)
+        <div class="display-label">Connectwise Search Fields: </div>
+        <div class="display-label">Username: </div>
+        <div class="display-field">
+            @Html.EditorFor(model => model.ConnectwiseID)
 
         
-    </div>
-    <div class="display-label">Email Address: </div>
-    <div class="display-field">
-        <input type="text" name="cwemail" id="cwemail" />
-        <input type="button" value="Connect" onclick="javascript:local.CheckCWIdentity();" />
+        </div>
+        <div class="display-label">Email Address: </div>
+        <div class="display-field">
+            <input type="text" name="cwemail" id="cwemail" />
+            <input type="button" value="Connect" onclick="javascript:local.CheckCWIdentity();" />
         
-    </div>    
+        </div>    
         
 
 
 
-    <div class="display-field">
-        <input type="submit" value="Register" />
+        <div class="display-field">
+            <input type="submit" value="Register" />
+        </div>
+
+        }
+    </fieldset>
+
     </div>
-
-    }
-</fieldset>
-

@@ -8,7 +8,7 @@ using sdtime.Util.Security;
 
 namespace sdtime.Controllers
 {
-    public class SupportController : Controller
+    public class HomeController : Controller
     {
         //
         // GET: /Home/

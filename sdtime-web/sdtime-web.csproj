@@ -109,7 +109,7 @@
   <ItemGroup>
     <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\AjaxModel\FindMemberRequest.cs" />
-    <Compile Include="Controllers\SupportController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TimeController.cs" />
     <Compile Include="Controllers\RegisterUserController.cs" />
     <Compile Include="Controllers\AjaxModel\TimeEntryRequest.cs" />
@@ -318,11 +318,12 @@
     </None>
     <Content Include="Views\User\ViewProfile.cshtml" />
     <Content Include="Views\Time\Tickets.cshtml" />
-    <Content Include="Views\Support\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <EntityDeploy Include="Util\Security\Model\UserDb.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>UserDb.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Views\Shared\LoginControl.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
