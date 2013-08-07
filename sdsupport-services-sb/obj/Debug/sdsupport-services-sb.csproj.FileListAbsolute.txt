@@ -1,0 +1,11 @@
+C:\Users\gferrie\Desktop\_github\sdtime\sdsupport-services-sb\bin\Debug\sdsupport-services-sb.exe.config
+C:\Users\gferrie\Desktop\_github\sdtime\sdsupport-services-sb\bin\Debug\sdsupport-services-sb.exe
+C:\Users\gferrie\Desktop\_github\sdtime\sdsupport-services-sb\bin\Debug\sdsupport-services-sb.pdb
+C:\Users\gferrie\Desktop\_github\sdtime\sdsupport-services-sb\bin\Debug\Microsoft.ServiceBus.dll
+C:\Users\gferrie\Desktop\_github\sdtime\sdsupport-services-sb\bin\Debug\Microsoft.WindowsAzure.Configuration.dll
+C:\Users\gferrie\Desktop\_github\sdtime\sdsupport-services-sb\bin\Debug\SD.CWServices.dll
+C:\Users\gferrie\Desktop\_github\sdtime\sdsupport-services-sb\bin\Debug\SD.CWServices.pdb
+C:\Users\gferrie\Desktop\_github\sdtime\sdsupport-services-sb\bin\Debug\Microsoft.ServiceBus.xml
+C:\Users\gferrie\Desktop\_github\sdtime\sdsupport-services-sb\obj\Debug\sdsupport-services-sb.csprojResolveAssemblyReference.cache
+C:\Users\gferrie\Desktop\_github\sdtime\sdsupport-services-sb\obj\Debug\sdsupport-services-sb.exe
+C:\Users\gferrie\Desktop\_github\sdtime\sdsupport-services-sb\obj\Debug\sdsupport-services-sb.pdb

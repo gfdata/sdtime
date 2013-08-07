@@ -10,14 +10,26 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <TimeStampOfAssociatedLegacyPublishXmlFile />
   </PropertyGroup>
   <ItemGroup>
+    <File Include="bin/Microsoft.ServiceBus.dll">
+      <publishTime>04/15/2013 15:22:13</publishTime>
+    </File>
+    <File Include="bin/Microsoft.WindowsAzure.Configuration.dll">
+      <publishTime>04/15/2013 15:22:13</publishTime>
+    </File>
     <File Include="bin/SD.CWServices.dll">
-      <publishTime>04/15/2013 11:32:01</publishTime>
+      <publishTime>08/07/2013 13:12:41</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>04/15/2013 15:22:14</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>08/07/2013 13:12:42</publishTime>
     </File>
     <File Include="TicketService.svc">
       <publishTime>04/10/2013 17:03:29</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/15/2013 11:32:02</publishTime>
+      <publishTime>08/07/2013 13:12:41</publishTime>
     </File>
   </ItemGroup>
 </Project>

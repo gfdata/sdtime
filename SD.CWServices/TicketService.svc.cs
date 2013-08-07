@@ -11,11 +11,12 @@ using SD.CWServices.Model.Tickets;
 namespace SD.CWServices
 {
 
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
+    [ServiceBehavior(Name = "TicketService", Namespace = "somethingdigital.com/2013/cwservices")]
     public class TicketService : ITicketService
     {
         #region private members
         
+
         ConnectwiseEntities db = new ConnectwiseEntities();
         
 

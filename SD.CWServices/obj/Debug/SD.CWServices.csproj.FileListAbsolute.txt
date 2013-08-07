@@ -10,3 +10,4 @@ C:\Users\gferrie\Desktop\_github\sdtime\SD.CWServices\obj\Debug\SD.CWServices.pd
 C:\Users\gferrie\Desktop\_github\sdtime\SD.CWServices\bin\Microsoft.ServiceBus.dll
 C:\Users\gferrie\Desktop\_github\sdtime\SD.CWServices\bin\Microsoft.WindowsAzure.Configuration.dll
 C:\Users\gferrie\Desktop\_github\sdtime\SD.CWServices\bin\Microsoft.ServiceBus.xml
+C:\Users\gferrie\Desktop\_github\sdtime\SD.CWServices\obj\Debug\SD.CWServices.csprojResolveAssemblyReference.cache

@@ -10,7 +10,7 @@ using SD.CWServices.Model.Tickets;
 namespace SD.CWServices
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
-    [ServiceContract]
+    [ServiceContract(Name="ITicketService", Namespace="somethingdigital.com/2013/cwservices")]
     public interface ITicketService
     {
         [OperationContract]
@@ -24,9 +24,7 @@ namespace SD.CWServices
 
         [OperationContract]
         bool SetTicket(Ticket ticket);
-
-        
     }
 
-
+    public interface ITicketChannel : ITicketService, IClientChannel { }
 }
