@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Dynamic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using GA.Core.Security;
 using Microsoft.IdentityModel.Claims;
+using Microsoft.IdentityModel.Configuration;
 using Microsoft.IdentityModel.Web;
 using sdtime.Util.Security;
 
@@ -33,6 +36,24 @@ namespace sdtime.Controllers
             }
             return View();
             
+        }
+
+        Func<string> GetRealmUrl = () =>
+        {
+            var section = ConfigurationManager.GetSection("microsoft.identityModel") as MicrosoftIdentityModelSection;
+            var svc = section.ServiceElements.Cast<ServiceElement>().First() as ServiceElement;
+            return svc.FederatedAuthentication.WSFederation.Realm;
+        };
+
+        public ActionResult Login()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Logout");
+            }
+            dynamic model = new ExpandoObject();
+            model.RealmUrl = GetRealmUrl();
+            return View(model);
         }
 
         public ActionResult Logout()

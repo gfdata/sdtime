@@ -324,6 +324,7 @@
       <LastGenOutput>UserDb.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Views\Shared\LoginControl.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

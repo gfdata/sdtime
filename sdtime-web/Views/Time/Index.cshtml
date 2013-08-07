@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<script src="../../Scripts/borrowed/dateFormat.util.js" type="text/javascript"></script>
+@*<script src="../../Scripts/borrowed/dateFormat.util.js" type="text/javascript"></script>
 <script src="../../Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
 <script src="../../Scripts/knockout-2.1.0.debug.js" type="text/javascript"></script>
 <script src="../../Scripts/sdtime-ui.js" type="text/javascript"></script>
@@ -84,7 +84,7 @@
 
                 sd.ui.setSelectedWeekday(d);
             });
-        </script>
+        </script>*@
 <header class="clearfix">
 	<h1><a href='@Url.Action("Index", "Home")'><img src='@Url.Content("~/Content/logo.png")' width="107" height="40" alt="SD Time" /></a></h1>
 	
@@ -108,7 +108,11 @@
 
 </header>
 
-        
+<div style="position: relative; margin-left: 24px; margin-top: 68px;">
+        <h1>Coming Soon!</h1>
+    </div>
+
+        <!-- 
         <div class="wrapper">
             <div class="content">
                 
@@ -297,3 +301,4 @@
                 </table>
             </div>
         </div>
+//-->
