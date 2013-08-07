@@ -110,7 +110,7 @@
     <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\AjaxModel\FindMemberRequest.cs" />
     <Compile Include="Controllers\SupportController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TimeController.cs" />
     <Compile Include="Controllers\RegisterUserController.cs" />
     <Compile Include="Controllers\AjaxModel\TimeEntryRequest.cs" />
     <Compile Include="Controllers\SupportServicesController.cs" />
@@ -317,7 +317,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <Content Include="Views\User\ViewProfile.cshtml" />
-    <Content Include="Views\Home\Tickets.cshtml" />
+    <Content Include="Views\Time\Tickets.cshtml" />
     <Content Include="Views\Support\Index.cshtml" />
     <EntityDeploy Include="Util\Security\Model\UserDb.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -328,7 +328,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Time\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
