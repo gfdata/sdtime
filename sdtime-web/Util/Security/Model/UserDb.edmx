@@ -4,50 +4,49 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SupportModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityContainer Name="SupportModelStoreContainer">
-          <EntitySet Name="UserEmailConfirmations" EntityType="SupportModel.Store.UserEmailConfirmations" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Users" EntityType="SupportModel.Store.Users" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK_UserUserEmailConfirmation" Association="SupportModel.Store.FK_UserUserEmailConfirmation">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="UserEmailConfirmations" EntitySet="UserEmailConfirmations" />
-          </AssociationSet>
-        </EntityContainer>
-        <EntityType Name="UserEmailConfirmations">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="SentOn" Type="datetime" />
-          <Property Name="ConfirmedOn" Type="datetime" />
-          <Property Name="UserId" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Users">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="DisplayName" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="EmailAddress" Type="nvarchar(max)" />
-          <Property Name="IsActive" Type="bit" />
-          <Property Name="MemberSince" Type="datetime" />
-          <Property Name="IdentityProviderKey" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="IdentityProviderName" Type="nvarchar(max)" Nullable="false" />
-        </EntityType>
-        <Association Name="FK_UserUserEmailConfirmation">
-          <End Role="Users" Type="SupportModel.Store.Users" Multiplicity="1" />
-          <End Role="UserEmailConfirmations" Type="SupportModel.Store.UserEmailConfirmations" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="UserEmailConfirmations">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-      </Schema>
-    </edmx:StorageModels>
+    <Schema Namespace="SupportModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="SupportModelStoreContainer">
+    <EntitySet Name="UserEmailConfirmations" EntityType="SupportModel.Store.UserEmailConfirmations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="SupportModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_UserUserEmailConfirmation" Association="SupportModel.Store.FK_UserUserEmailConfirmation">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserEmailConfirmations" EntitySet="UserEmailConfirmations" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="UserEmailConfirmations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SentOn" Type="datetime" Nullable="true" />
+    <Property Name="ConfirmedOn" Type="datetime" Nullable="true" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DisplayName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EmailAddress" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsActive" Type="bit" Nullable="true" />
+    <Property Name="MemberSince" Type="datetime" Nullable="true" />
+    <Property Name="IdentityProviderKey" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IdentityProviderName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_UserUserEmailConfirmation">
+    <End Role="Users" Type="SupportModel.Store.Users" Multiplicity="1" />
+    <End Role="UserEmailConfirmations" Type="SupportModel.Store.UserEmailConfirmations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserEmailConfirmations">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SupportModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -98,26 +97,33 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SupportModelStoreContainer" CdmEntityContainer="SupportModelStoreContainerDb">
-          <EntitySetMapping Name="UserEmailConfirmations"><EntityTypeMapping TypeName="SupportModel.UserEmailConfirmation"><MappingFragment StoreEntitySet="UserEmailConfirmations">
-            <ScalarProperty Name="Id" ColumnName="Id" />
-            <ScalarProperty Name="SentOn" ColumnName="SentOn" />
-            <ScalarProperty Name="ConfirmedOn" ColumnName="ConfirmedOn" />
-            <ScalarProperty Name="UserId" ColumnName="UserId" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Users"><EntityTypeMapping TypeName="SupportModel.User"><MappingFragment StoreEntitySet="Users">
-            <ScalarProperty Name="Id" ColumnName="Id" />
-            <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
-            <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
-            <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-            <ScalarProperty Name="MemberSince" ColumnName="MemberSince" />
-            <ScalarProperty Name="IdentityProviderKey" ColumnName="IdentityProviderKey" />
-            <ScalarProperty Name="IdentityProviderName" ColumnName="IdentityProviderName" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SupportModelStoreContainer" CdmEntityContainer="SupportModelStoreContainerDb">
+    <EntitySetMapping Name="UserEmailConfirmations">
+      <EntityTypeMapping TypeName="IsTypeOf(SupportModel.UserEmailConfirmation)">
+        <MappingFragment StoreEntitySet="UserEmailConfirmations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SentOn" ColumnName="SentOn" />
+          <ScalarProperty Name="ConfirmedOn" ColumnName="ConfirmedOn" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(SupportModel.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="MemberSince" ColumnName="MemberSince" />
+          <ScalarProperty Name="IdentityProviderKey" ColumnName="IdentityProviderKey" />
+          <ScalarProperty Name="IdentityProviderName" ColumnName="IdentityProviderName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">

@@ -2,7 +2,7 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="SupportModelStoreContainer" CdmEntityContainer="SupportModelStoreContainerDb">
     <EntitySetMapping Name="UserEmailConfirmations">
-      <EntityTypeMapping TypeName="SupportModel.UserEmailConfirmation">
+      <EntityTypeMapping TypeName="IsTypeOf(SupportModel.UserEmailConfirmation)">
         <MappingFragment StoreEntitySet="UserEmailConfirmations">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="SentOn" ColumnName="SentOn" />
@@ -12,7 +12,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="SupportModel.User">
+      <EntityTypeMapping TypeName="IsTypeOf(SupportModel.User)">
         <MappingFragment StoreEntitySet="Users">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />

@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Register User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <script src="../../Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -37,6 +38,31 @@
     };
     
 </script>
+
+<header class="clearfix">
+	<h1><a href='@Url.Action("Index", "Home")'><img src='@Url.Content("~/Content/logo.png")' width="107" height="40" alt="SD Time" /></a></h1>
+	
+	<div class="filters clearfix">
+		<select id="employee-filter" data-bind="options: members, optionsText: 'fullName', value: selectedMember, event: { change: addSelectedEmployee }"></select>
+		<select id="client-filter" data-bind="options: clients, optionsText: 'clientName', value: selectedClient, event: { change: addSelectedClient }"></select>
+	</div><!-- filters -->
+	
+	<p class="user-info">Logged in as <strong><a href="@Url.Action("ViewProfile", "User")">@ViewBag.Username</a></strong></p>
+	
+	<div class="filter-bar clearfix">
+		<!-- ko foreach: selectedMembers -->
+			<a class="filter-item" data-bind="text: fullName, event: { click: removeSelectedEmployee }" title="Remove this filter"></a>
+		<!-- /ko -->
+		<!-- ko foreach: selectedClients -->
+			<a class="filter-item" data-bind="text: clientName, event: { click: removeSelectedClient }" title="Remove this filter"></a>			
+		<!-- /ko -->
+	</div><!-- filter-bar -->
+	
+	<div class="errordiv"></div>
+
+</header>
+
+
 
 <h2 class="IntroTitle">Please register (one time only)... </h2>
 

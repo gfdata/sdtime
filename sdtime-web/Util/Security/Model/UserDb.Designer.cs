@@ -8,12 +8,13 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
@@ -103,6 +104,7 @@ namespace sdtime.Util.Security.Model
         private ObjectSet<User> _Users;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -122,11 +124,11 @@ namespace sdtime.Util.Security.Model
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
@@ -157,6 +159,7 @@ namespace sdtime.Util.Security.Model
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -331,6 +334,7 @@ namespace sdtime.Util.Security.Model
         partial void OnIdentityProviderNameChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -357,6 +361,7 @@ namespace sdtime.Util.Security.Model
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -383,6 +388,7 @@ namespace sdtime.Util.Security.Model
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -485,6 +491,7 @@ namespace sdtime.Util.Security.Model
         partial void OnUserIdChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -527,8 +534,10 @@ namespace sdtime.Util.Security.Model
         }
 
         #endregion
+
     }
 
     #endregion
+
     
 }

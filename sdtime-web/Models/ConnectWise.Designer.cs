@@ -8,15 +8,15 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
-
 namespace sdtime.Models
 {
     #region Contexts
@@ -82,6 +82,7 @@ namespace sdtime.Models
         private ObjectSet<somethingdigital_vTickets> _somethingdigital_vTickets;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -93,11 +94,11 @@ namespace sdtime.Models
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
@@ -124,6 +125,7 @@ namespace sdtime.Models
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -421,9 +423,11 @@ namespace sdtime.Models
         partial void OnclientIdChanged();
 
         #endregion
+
     
     }
 
     #endregion
+
     
 }

@@ -12,20 +12,20 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="SentOn" Type="datetime" />
-    <Property Name="ConfirmedOn" Type="datetime" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SentOn" Type="datetime" Nullable="true" />
+    <Property Name="ConfirmedOn" Type="datetime" Nullable="true" />
     <Property Name="UserId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="DisplayName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="EmailAddress" Type="nvarchar(max)" />
-    <Property Name="IsActive" Type="bit" />
-    <Property Name="MemberSince" Type="datetime" />
+    <Property Name="EmailAddress" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsActive" Type="bit" Nullable="true" />
+    <Property Name="MemberSince" Type="datetime" Nullable="true" />
     <Property Name="IdentityProviderKey" Type="nvarchar(max)" Nullable="false" />
     <Property Name="IdentityProviderName" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
