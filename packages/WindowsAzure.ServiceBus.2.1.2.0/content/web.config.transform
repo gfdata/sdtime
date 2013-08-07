@@ -1,18 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <configuration>
-  <configSections>
-    <!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 -->
-    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
-  </configSections>
   <system.serviceModel>
-    <services>
-      <service name="SD.CWServices.TicketService">
-        <endpoint name="TicketService"
-                  contract="SD.CWServices.ITicketService"
-                  binding="netTcpRelayBinding"/>
-
-      </service>
-    </services>
     <extensions>
       <!-- In this extension section we are introducing all known service bus extensions. User can remove the ones they don't need. -->
       <behaviorExtensions>
@@ -21,7 +9,7 @@
         <add name="serviceRegistrySettings" type="Microsoft.ServiceBus.Configuration.ServiceRegistrySettingsElement, Microsoft.ServiceBus, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
       </behaviorExtensions>
       <bindingElementExtensions>
-        <add name="netMessagingTransport" type="Microsoft.ServiceBus.Messaging.Configuration.NetMessagingTransportExtensionElement, Microsoft.ServiceBus,  Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+        <add name="netMessagingTransport" type="Microsoft.ServiceBus.Messaging.Configuration.NetMessagingTransportExtensionElement, Microsoft.ServiceBus, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
         <add name="tcpRelayTransport" type="Microsoft.ServiceBus.Configuration.TcpRelayTransportElement, Microsoft.ServiceBus, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
         <add name="httpRelayTransport" type="Microsoft.ServiceBus.Configuration.HttpRelayTransportElement, Microsoft.ServiceBus, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
         <add name="httpsRelayTransport" type="Microsoft.ServiceBus.Configuration.HttpsRelayTransportElement, Microsoft.ServiceBus, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
@@ -38,25 +26,8 @@
       </bindingExtensions>
     </extensions>
   </system.serviceModel>
-  <connectionStrings>
-    <add name="ConnectwiseEntities" connectionString="metadata=res://*/Model.ConnectwiseModel.csdl|res://*/Model.ConnectwiseModel.ssdl|res://*/Model.ConnectwiseModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=10.10.10.204;initial catalog=cwwebapp_sd;persist security info=True;user id=sdreadonly;password=sdreadonly;multipleactiveresultsets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
-  </connectionStrings>
   <appSettings>
     <!-- Service Bus specific app setings for messaging connections -->
-    <add key="ServicePath" value="cw/tickets" />
-    <add key="ServiceNamespace" value="sdsupport" />
-    <add key="IssuerName" value="sd-svc" />
-    <add key="IssuerSecret" value="mT+GEEUFD0TfZVUB6Xvjrn4cHWfe18u2PY77/RUiUzs=" />
+    <add key="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://[your namespace].servicebus.windows.net;SharedSecretIssuer=owner;SharedSecretValue=[your secret]"/>
   </appSettings>
-  <runtime>
-    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
-      <dependentAssembly>
-        <assemblyIdentity name="Microsoft.ServiceBus" publicKeyToken="31bf3856ad364e35" culture="neutral" />
-        <bindingRedirect oldVersion="1.0.0.0" newVersion="1.8.0.0" />
-      </dependentAssembly>
-    </assemblyBinding>
-  </runtime>
-  <entityFramework>
-    <defaultConnectionFactory type="System.Data.Entity.Infrastructure.SqlConnectionFactory, EntityFramework" />
-  </entityFramework>
 </configuration>

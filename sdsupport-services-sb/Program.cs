@@ -16,6 +16,12 @@ namespace sdsupport
                 wrapper.DebugMode = true;
                 wrapper.Start();
 
+                Console.WriteLine("Service Running in DEBUG MODE");
+                Console.WriteLine("Press <Enter> to stop the service");
+                Console.ReadLine();
+
+                wrapper.Stop();
+
             }
             else
             {

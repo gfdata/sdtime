@@ -9,3 +9,5 @@ C:\Users\gferrie\Desktop\_github\sdtime\sdsupport-services-sb\bin\Debug\Microsof
 C:\Users\gferrie\Desktop\_github\sdtime\sdsupport-services-sb\obj\Debug\sdsupport-services-sb.csprojResolveAssemblyReference.cache
 C:\Users\gferrie\Desktop\_github\sdtime\sdsupport-services-sb\obj\Debug\sdsupport-services-sb.exe
 C:\Users\gferrie\Desktop\_github\sdtime\sdsupport-services-sb\obj\Debug\sdsupport-services-sb.pdb
+C:\Users\gferrie\Desktop\_github\sdtime\sdsupport-services-sb\bin\Debug\EntityFramework.dll
+C:\Users\gferrie\Desktop\_github\sdtime\sdsupport-services-sb\bin\Debug\EntityFramework.xml
