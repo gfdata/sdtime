@@ -81,6 +81,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CWServiceBoards.cs" />
     <Compile Include="Model\ConnectwiseModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

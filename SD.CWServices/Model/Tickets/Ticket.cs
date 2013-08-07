@@ -32,6 +32,18 @@ namespace SD.CWServices.Model.Tickets
         [DataMember]
         public int StatusID { get; set; }
 
+        public override string ToString()
+        {
+            try
+            {
+
+                return string.Format("{0} - {1} ({2})", this.ClientName, this.Title, this.Status);
+            }
+            catch (Exception )
+            {
+                return base.ToString();
+            }
+        }
 
         public static Ticket CreateTicket(somethingdigital_vTickets ticket)
         {

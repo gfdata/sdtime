@@ -23,5 +23,10 @@ namespace SD.CWServices.Model.Tickets
             newStatus.SortOrder = status.Sort_Order.GetValueOrDefault(0);
             return newStatus;
         }
+
+        public override string ToString()
+        {
+            return this.Title;
+        }
     }
 }
