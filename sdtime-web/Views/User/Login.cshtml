@@ -15,7 +15,7 @@ div.SignInContent
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
-	border: solid 1px #BBBBBB;
+	
 	position: relative;
 	width: 340px;
 	height: 325px;
@@ -89,18 +89,19 @@ button.IdentityProvider
 	height: 50px;
 	text-align: center;
 	border: solid 1px #BBBBBB;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 5px;
 	position: relative;
 	cursor: pointer;
-	font-size: 18px;
-	color: blue;
 	background: #F7F7F7;
 	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#EEEEEE));
 	background: -moz-linear-gradient(bottom, #EEEEEE, #FFFFFF);
 	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#FFFFFF', EndColorStr='#EEEEEE');
-	white-space: normal
+	white-space: normal;
+    margin: 0 0 6px 0;
+	font-family: "museo-slab", Rockwell, sans-serif;
+	font-size: 15px;
+	font-weight: normal;
+	line-height: 1.05;
+	color: #F58220;
 }
 
 img.IdentityProviderImage 
@@ -163,7 +164,7 @@ label
     <h2>Login</h2>
 
         <div id="Main" style="display:none">
-	    <div id="Banner" class="Banner"><b>Sign in to SD Support</b></div>
+	    
 	    <div id="SignInContent" class="SignInContent">
 		    <div id="LeftArea" class="LeftArea" style="display:none;">
 			    <div class="Header">Sign in using your account on:</div>   
