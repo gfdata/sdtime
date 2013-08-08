@@ -1,12 +1,13 @@
 ﻿@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <header class="clearfix">
 	<h1><a href='@Url.Action("Index", "Home")'><img src='@Url.Content("~/Content/logo.png")' width="107" height="40" alt="SD Time" /></a></h1>
 	
 	<div class="filters clearfix">
+		<select id="board-filter" data-bind="options: boards, optionsText: 'name', value: selectedBoard, event: { change: changeServiceBoard }" ></select>
 		<select id="employee-filter" data-bind="options: members, optionsText: 'fullName', value: selectedMember,  event:{ change: addSelectedEmployee}"></select>
 		<select id="client-filter" data-bind="options: clients, optionsText: 'clientName', value: selectedClient,  event:{ change: addSelectedClient}"></select>
 	</div><!-- filters -->
@@ -32,7 +33,8 @@
 		<ul data-bind="sortable: {value: $data, params: $parent, index: $index}">
 			<!-- ko foreach: tickets -->
 			<li class="ticket clearfix" data-bind="attr : {'id': number}">
-				<h2 data-bind="text: client"></h2>
+				
+                <h2 data-bind="text: client"></h2>
 				<h3 data-bind="text: name"></h3>
 				<div class="left-col"><h4>Assigned</h4> <span type="text" data-bind="text: assigned"></span></div>
 				<div class="right-col"><h4>Budget</h4> <span type="text" data-bind="text: budget"></span></div>

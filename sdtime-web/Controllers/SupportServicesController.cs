@@ -27,15 +27,15 @@ namespace sdtime.Controllers
             
         }
 
-        public ActionResult ServiceBoard(int?[] members, int?[] clients)
+        public ActionResult ServiceBoard(int?[] members, int?[] clients, int board)
         {
             SupportResponse response = new SupportResponse();
 
             using (var sbh = new ServiceBusHelper())
             {
                 var client = sbh.GetService();
-                var board = Util.CWServiceBoards.InteractiveManagedServices;
 
+                //var board = sdtime.Util.CWServiceBoards.InteractiveManagedServices;
                 
                 var svcTickets = client.GetTicketsForTheWeek(members, clients, board);
                 var svcStatus = client.GetStatus(board);
