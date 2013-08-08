@@ -82,11 +82,15 @@ function SupportViewModel() {
 	}
 
 	toggleDateFilter = function () {
+	    members.removeAll();
+	    clients.removeAll();
 	    loadData();
 	    return true;
 	}
 
 	changeServiceBoard = function () {
+	    members.removeAll();
+	    clients.removeAll();
 	    loadData();
 	}
 
