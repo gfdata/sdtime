@@ -18,6 +18,7 @@ function SupportViewModel() {
     boards = ko.observableArray();
     selectedBoard = ko.observable('');
 
+    showOnlyThisWeek = ko.observable(true);
 
     loadData = function () {
                
@@ -32,8 +33,10 @@ function SupportViewModel() {
             clientsParameter += "clients=" + selectedClients()[i].clientId + "&";
         }
         
+        //alert(showOnlyThisWeek());
+
         //console.log("/SupportServices/ServiceBoard?" + membersParameter + clientsParameter);
-        $.getJSON("/SupportServices/ServiceBoard?" + membersParameter + clientsParameter + "board=" + selectedBoard().id, function (data) {
+        $.getJSON("/SupportServices/ServiceBoard?" + membersParameter + clientsParameter + "board=" + selectedBoard().id + "&weekView=" + showOnlyThisWeek(), function (data) {
             data.buckets.sort(function (left, right) {
                 return left.sortOrder == right.sortOrder ? 0 : (left.sortOrder < right.sortOrder ? -1 : 1)
             });
@@ -78,6 +81,11 @@ function SupportViewModel() {
 		}
 	}
 
+	toggleDateFilter = function () {
+	    loadData();
+	    return true;
+	}
+
 	changeServiceBoard = function () {
 	    loadData();
 	}
@@ -115,6 +123,8 @@ function SupportViewModel() {
     boards.push(new Board("Software Service", 12));
     boards.push(new Board("Interactive Project", 14));
     boards.push(new Board("Software Project", 15));
+
+
 
     loadData();
 

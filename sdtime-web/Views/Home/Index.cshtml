@@ -10,6 +10,7 @@
 		<select id="board-filter" data-bind="options: boards, optionsText: 'name', value: selectedBoard, event: { change: changeServiceBoard }" ></select>
 		<select id="employee-filter" data-bind="options: members, optionsText: 'fullName', value: selectedMember,  event:{ change: addSelectedEmployee}"></select>
 		<select id="client-filter" data-bind="options: clients, optionsText: 'clientName', value: selectedClient,  event:{ change: addSelectedClient}"></select>
+        <input type="checkbox" id="time-filter" data-bind="checked: showOnlyThisWeek, click: toggleDateFilter"  /> <span>This week only</span>
 	</div><!-- filters -->
 	
 	@{ Html.RenderPartial("LoginControl"); }

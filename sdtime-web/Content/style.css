@@ -224,6 +224,20 @@ p.user-info a {
 	-moz-border-radius: 3px;
 }
 
+.filters span {
+    float: left;
+    margin-left: 3px;
+    vertical-align: middle;
+    margin-top: 7px;
+}
+
+.filters input {
+    float: left;
+    margin-top:8px;
+    vertical-align: middle;
+
+}
+
 .filter-bar {
 	display: none;
 	clear: both;

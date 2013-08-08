@@ -27,7 +27,7 @@ namespace sdtime.Controllers
             
         }
 
-        public ActionResult ServiceBoard(int?[] members, int?[] clients, int board)
+        public ActionResult ServiceBoard(int?[] members, int?[] clients, int board, bool weekView)
         {
             SupportResponse response = new SupportResponse();
 
@@ -36,8 +36,14 @@ namespace sdtime.Controllers
                 var client = sbh.GetService();
 
                 //var board = sdtime.Util.CWServiceBoards.InteractiveManagedServices;
+
+                IEnumerable<SD.CWServices.Model.Tickets.Ticket> svcTickets = null;
+
+                if (weekView)
+                    svcTickets = client.GetTicketsForTheWeek(members, clients, board);
+                else
+                    svcTickets = client.GetTicketsForAllTime(members, clients, board);
                 
-                var svcTickets = client.GetTicketsForTheWeek(members, clients, board);
                 var svcStatus = client.GetStatus(board);
 
                 foreach (var state in svcStatus)
