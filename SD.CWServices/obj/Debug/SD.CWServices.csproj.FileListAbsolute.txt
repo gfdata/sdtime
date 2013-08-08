@@ -5,9 +5,8 @@ C:\dev\SDTime\SD.CWServices\obj\Debug\SD.CWServices.dll
 C:\dev\SDTime\SD.CWServices\obj\Debug\SD.CWServices.pdb
 C:\Users\gferrie\Desktop\_github\sdtime\SD.CWServices\bin\SD.CWServices.dll
 C:\Users\gferrie\Desktop\_github\sdtime\SD.CWServices\bin\SD.CWServices.pdb
-C:\Users\gferrie\Desktop\_github\sdtime\SD.CWServices\obj\Debug\SD.CWServices.dll
-C:\Users\gferrie\Desktop\_github\sdtime\SD.CWServices\obj\Debug\SD.CWServices.pdb
 C:\Users\gferrie\Desktop\_github\sdtime\SD.CWServices\bin\Microsoft.ServiceBus.dll
 C:\Users\gferrie\Desktop\_github\sdtime\SD.CWServices\bin\Microsoft.WindowsAzure.Configuration.dll
 C:\Users\gferrie\Desktop\_github\sdtime\SD.CWServices\bin\Microsoft.ServiceBus.xml
-C:\Users\gferrie\Desktop\_github\sdtime\SD.CWServices\obj\Debug\SD.CWServices.csprojResolveAssemblyReference.cache
+C:\Users\gferrie\Desktop\_github\sdtime\SD.CWServices\obj\Debug\SD.CWServices.dll
+C:\Users\gferrie\Desktop\_github\sdtime\SD.CWServices\obj\Debug\SD.CWServices.pdb

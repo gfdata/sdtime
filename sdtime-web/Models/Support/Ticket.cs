@@ -16,9 +16,9 @@ namespace sdtime.Models.Support
         public double actual { get; set; }
         public int statusId { get; set; }
 
-        public CWTicketService.Ticket GetContractObject()
+        public SD.CWServices.Model.Tickets.Ticket GetContractObject()
         {
-            CWTicketService.Ticket tc = new CWTicketService.Ticket();
+            var tc = new SD.CWServices.Model.Tickets.Ticket();
             tc.AssignedMember = assigned;
             tc.ClientName = client;
             tc.HoursBudget = budget;

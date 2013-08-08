@@ -1,4 +1,6 @@
-﻿namespace sdsupport
+﻿using System.Diagnostics;
+using System.ServiceProcess;
+namespace sdsupport
 {
     partial class NetRelayServiceInstaller
     {
@@ -29,6 +31,33 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            ServiceProcessInstaller processInstaller = new ServiceProcessInstaller();
+            ServiceInstaller serviceInstaller = new ServiceInstaller();
+            EventLogInstaller logInstaller = new EventLogInstaller();
+
+            logInstaller.Log = "Application";
+            logInstaller.Source = "sdsupportsvc";
+
+            processInstaller.Account = ServiceAccount.LocalSystem;
+            serviceInstaller.StartType = ServiceStartMode.Automatic;
+
+            serviceInstaller.ServiceName = "sdsupportsvc";
+            serviceInstaller.DisplayName = "SD Support Host Service";
+            serviceInstaller.Description = "Hosts an Azure Net Relay WCF service which support sdsupport.apphb.com";
+
+            for (var t = 0; t < Installers.Count; t++)
+            {
+                if (Installers[t] is EventLogInstaller)
+                {
+                    Installers.Remove(Installers[t]);
+                    break;
+                }
+            }
+
+            Installers.Add(logInstaller);
+            Installers.Add(processInstaller);
+            Installers.Add(serviceInstaller);
+            
         }
 
         #endregion

@@ -58,3 +58,8 @@ C:\Users\gferrie\Desktop\_github\sdtime\sdtime-web\bin\en\Microsoft.IdentityMode
 C:\Users\gferrie\Desktop\_github\sdtime\sdtime-web\obj\Debug\sdtime-web.csprojResolveAssemblyReference.cache
 C:\Users\gferrie\Desktop\_github\sdtime\sdtime-web\obj\Debug\sdtime.dll
 C:\Users\gferrie\Desktop\_github\sdtime\sdtime-web\obj\Debug\sdtime.pdb
+C:\Users\gferrie\Desktop\_github\sdtime\sdtime-web\bin\Microsoft.ServiceBus.dll
+C:\Users\gferrie\Desktop\_github\sdtime\sdtime-web\bin\Microsoft.WindowsAzure.Configuration.dll
+C:\Users\gferrie\Desktop\_github\sdtime\sdtime-web\bin\Microsoft.ServiceBus.xml
+C:\Users\gferrie\Desktop\_github\sdtime\sdtime-web\bin\SD.CWServices.dll
+C:\Users\gferrie\Desktop\_github\sdtime\sdtime-web\bin\SD.CWServices.pdb
