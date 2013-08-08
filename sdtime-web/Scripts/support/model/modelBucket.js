@@ -26,4 +26,9 @@ var Bucket = function (name, status, statusId, tickets) {
     }
 
 }
+
+var Board = function (name, id) {
+    this.name = name;
+    this.id = id;
+};
  
