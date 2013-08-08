@@ -87,15 +87,12 @@ namespace SD.CWServices
             List<Ticket> returnTickets = new List<Ticket>();
 
 
-            int diff = DateTime.Now.DayOfWeek - DayOfWeek.Monday;
-            if (diff < 0) { diff += 7; }
-            DateTime startDate = DateTime.Now.AddDays((-1 * diff) - 1).Date;
-            DateTime endDate = startDate.AddDays(7);
+  
 
-            var list = getStates(db, serviceBoard).Select( q => q.Title);          
+            var list = getStates(db, serviceBoard).Select( q => q.Title);
 
-            var tickets = db.somethingdigital_vTickets.Where(t => t.boardId == serviceBoard)
-                                .Where(q => list.Contains(q.status));
+            var tickets = db.somethingdigital_vTickets.Where(t => t.boardId > 12)
+                               .Where(q => list.Contains(q.status));
 
             if (members == null || members.Length == 0)
             {
@@ -103,7 +100,7 @@ namespace SD.CWServices
             }
             else
             {
-                tickets = tickets.Where(t => members.Contains(t.employeeId));
+               tickets = tickets.Where(t => members.Contains(t.employeeId));
             }
 
             if (clients == null || clients.Length == 0)
@@ -112,7 +109,7 @@ namespace SD.CWServices
             }
             else
             {
-                tickets = tickets.Where(t => clients.Contains(t.clientId));
+               tickets = tickets.Where(t => clients.Contains(t.clientId));
             }
 
             tickets = tickets.OrderBy(t => t.Sort_Order);

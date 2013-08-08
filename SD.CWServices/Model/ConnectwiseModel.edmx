@@ -575,9 +575,9 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="ConnectwiseModel" ZoomLevel="24">
+      <Diagram Name="ConnectwiseModel" ZoomLevel="88">
         <EntityTypeShape EntityType="ConnectwiseModel.SR_Service" Width="1.5" PointX="0.75" PointY="0.75" Height="20.327902018229167" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConnectwiseModel.somethingdigital_vTickets" Width="1.5" PointX="2.75" PointY="0.75" Height="2.9070849609374996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConnectwiseModel.somethingdigital_vTickets" Width="5.75" PointX="2.75" PointY="0.75" Height="2.9070849609374996" IsExpanded="true" />
         <EntityTypeShape EntityType="ConnectwiseModel.SR_Status" Width="1.5" PointX="3.375" PointY="4.75" Height="4.8792529296875" />
       </Diagram>
     </Diagrams>
