@@ -91,7 +91,7 @@ namespace SD.CWServices
 
             var list = getStates(db, serviceBoard).Select( q => q.Title);
 
-            var tickets = db.somethingdigital_vTickets.Where(t => t.boardId > 12)
+            var tickets = db.somethingdigital_vTickets.Where(t => t.boardId == serviceBoard)
                                .Where(q => list.Contains(q.status));
 
             if (members == null || members.Length == 0)
